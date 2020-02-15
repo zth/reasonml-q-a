@@ -222,6 +222,7 @@ type Props = {
   relay: RelayProp,
   post: Post_post,
   context: 'list' | 'details',
+  hideBody?: boolean,
 };
 
 export function PostBox({children}: {children: React.Node}) {
@@ -438,7 +439,7 @@ export function computePostDate(post: {
   return new Date(post.createdAt);
 }
 
-export const Post = ({relay, post, context}: Props) => {
+export const Post = ({relay, post, context, hideBody}: Props) => {
   const environment = useRelayEnvironment();
   const cache = React.useContext(PreloadCacheContext);
   React.useEffect(() => {
@@ -509,9 +510,11 @@ export const Post = ({relay, post, context}: Props) => {
           </Box>
         ) : null}
         <Box direction="row" justify="between"></Box>
-        <Text>
-          <MarkdownRenderer escapeHtml={true} source={post.body} />
-        </Text>
+        {hideBody ? null : (
+          <Text>
+            <MarkdownRenderer escapeHtml={true} source={post.body} />
+          </Text>
+        )}
       </Box>
       <ReactionBar
         relay={relay}

@@ -49,7 +49,7 @@ const Posts = ({relay, repository}: Props) => {
     <Box>
       {issues.map((e, i) =>
         e && e.node ? (
-          <Post key={e.node.id} context="list" post={e.node} />
+          <Post key={e.node.id} context="list" post={e.node} hideBody={true} />
         ) : null,
       )}
       {isLoading ? (
