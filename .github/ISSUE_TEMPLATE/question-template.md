@@ -8,8 +8,6 @@ assignees: ''
 ---
 
 # Question
-> [Who asked the question?]
-
 Put the question here.
 
 # Answer
