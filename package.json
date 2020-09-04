@@ -24,7 +24,7 @@
     "node-fetch": "^2.6.0",
     "onegraph-auth": "^2.2.1",
     "pixel-stream": "^1.0.3",
-    "react": "0.0.0-experimental-f42431abe",
+    "react": "0.14.0",
     "react-dom": "0.0.0-experimental-f42431abe",
     "react-embed": "^2.7.1",
     "react-helmet": "^5.2.1",
